@@ -11,15 +11,15 @@ from skimage.transform import resize
 from sklearn.metrics import confusion_matrix, precision_score, recall_score, f1_score, accuracy_score
 
 # set paths
-DIR_DATA_ORIGINAL = 'data/COVID-19_Radiography_Dataset/'  # set to local path
-DIR_DATA = 'data/'  # path in Google Drive
+DIR_DATA_LOCAL = 'data/COVID-19_Radiography_Dataset/'  # set to local path
+DIR_DATA_COLAB = 'data/'  # path in Google Drive
 
 LST_GROUP = ['covid', 'normal', 'viral', 'opac']
 LST_FOLDERS = ['COVID', 'Normal', 'Viral Pneumonia', 'Lung_Opacity']
 FNAME_MAPPER = dict(zip(LST_GROUP, LST_FOLDERS))
 LABEL_MAPPER = dict(zip(LST_GROUP, range(4)))
 
-DIRS = dict(zip(LST_GROUP, [os.path.join(DIR_DATA_ORIGINAL, folder) for folder in LST_FOLDERS]))
+DIRS = dict(zip(LST_GROUP, [os.path.join(DIR_DATA_LOCAL, folder) for folder in LST_FOLDERS]))
 DIR_IMAGES = dict(zip(LST_GROUP, [os.path.join(dir, 'images') for dir in DIRS.values()]))
 DIR_MASKS = dict(zip(LST_GROUP, [os.path.join(dir, 'masks') for dir in DIRS.values()]))
 DIR_OUTPUT = "projet_radio_covid/results/"

@@ -7,7 +7,7 @@ import matplotlib.pyplot as plt
 from skimage.io import imread
 from skimage.transform import resize
 
-from utils import DIR_DATA, DIR_IMAGES, DIR_MASKS, LST_GROUP, LABEL_MAPPER, NUM_ALL_IMG, get_fname
+from utils import DIR_DATA_COLAB, DIR_IMAGES, DIR_MASKS, LST_GROUP, LABEL_MAPPER, NUM_ALL_IMG, get_fname
 
 
 # preprocessing
@@ -140,7 +140,7 @@ def load_preprocessed_data(params):
     print('preprocessed image loading ...')
     for group, num in zip(LST_GROUP, num_images):
         X[sum_num:(sum_num + num), :, :] = [
-            imread(os.path.join(DIR_DATA, 'image_size_128_128_mask_crop', group + '_' + str(idx) + '.png'),
+            imread(os.path.join(DIR_DATA_COLAB, 'image_size_128_128_mask_crop', group + '_' + str(idx) + '.png'),
                    as_gray=True)  ## todo use param
             for idx in range(1, num + 1)]
         y[sum_num:sum_num + num] = [LABEL_MAPPER[group]] * num
