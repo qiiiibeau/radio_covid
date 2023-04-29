@@ -8,7 +8,7 @@ from skimage.transform import resize
 
 sys.path.append('../code')
 # print(sys.path)
-from utils import LST_GROUP, LST_FOLDERS, NUM_ALL_IMG, get_fname
+from utils import LST_GROUP, LST_FOLDERS, NUM_ALL_IMG, get_fname, LABEL_MAPPER
 
 DIR_DATA_LOCAL = '../data/COVID-19_Radiography_Dataset/'
 DIRS = dict(zip(LST_GROUP, [os.path.join(DIR_DATA_LOCAL, folder) for folder in LST_FOLDERS]))

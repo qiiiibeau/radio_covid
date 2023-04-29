@@ -4,3 +4,4 @@ code/test.py
 code/.ipynb_checkpoints
 code/lung_segmentation/lung_segmentation_tensorflow_2/__pycache__/
 code/lung_segmentation/lung_segmentation_tensorflow_2/files/
+*.h5

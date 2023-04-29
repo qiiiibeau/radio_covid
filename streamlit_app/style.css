@@ -45,11 +45,11 @@ section[data-testid="stSidebar"] button[kind="icon"] {
 }
 
 section[data-testid="stSidebar"] .st-bk {
-  background-color: white;
+  background-color: #10b8dd;
 }
 
 section[data-testid="stSidebar"] .st-c0 {
-  background-color: black;
+  background-color: #10b8dd;
 }
 
 section[data-testid="stSidebar"] hr {

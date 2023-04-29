@@ -22,6 +22,7 @@ TEAM_MEMBERS = [
     Member(
         name="Qibo Sun",
         linkedin_url="https://www.linkedin.com/in/qibo-sun-42965063/",
+        github_url="https://github.com/qiiiibeau"
     )
 ]
 
