@@ -7,15 +7,22 @@ Config file for Streamlit App
 from member import Member
 
 
-TITLE = "My Awesome App"
+TITLE = "Analyse de radiographies pulmonaires Covid-19"
 
 TEAM_MEMBERS = [
     Member(
-        name="John Doe",
-        linkedin_url="https://www.linkedin.com/in/charlessuttonprofile/",
-        github_url="https://github.com/charlessutton",
+        name="Patrizia Castiglione",
+        linkedin_url="https://www.linkedin.com/in/patrizia-castiglione-78914638/"
     ),
-    Member("Jane Doe"),
+    Member(
+        name="Isabelle Guillemin",
+        linkedin_url="https://www.linkedin.com/in/isabelle-guillemin-6445915/",
+        github_url="https://github.com/IsaGuillemin"
+    ),
+    Member(
+        name="Qibo Sun",
+        linkedin_url="https://www.linkedin.com/in/qibo-sun-42965063/",
+    )
 ]
 
-PROMOTION = "Promotion Bootcamp Data Scientist - April 2021"
+PROMOTION = "Promotion Bootcamp Data Scientist - Februry 2023"

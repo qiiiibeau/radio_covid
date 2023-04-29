@@ -1,4 +1,3 @@
-import os
 import time
 
 from sklearn.linear_model import LogisticRegression
@@ -8,28 +7,11 @@ from sklearn import ensemble
 from sklearn.model_selection import train_test_split
 from sklearn.decomposition import PCA
 
-from code.utils import get_fname, get_str_param, get_dir_pred, get_path_metric, load_summary_metrics, save_pred, \
-    save_metrics
-from code.preprocessing import dataload_preprocessing, load_preprocessed_data
+from utils import save_pred, save_metrics
+from preprocessing import load_preprocessed_data
 
-# set paths
-DIR_DATA_LOCAL = 'projet_radio_covid/COVID-19_Radiography_Dataset/'  # set to local path
-DIR_DATA_GDRIVE = 'projet_radio_covid/data/'
-
-LST_GROUP = ['covid', 'normal', 'viral', 'opac']
-LST_FOLDERS = ['COVID', 'Normal', 'Viral Pneumonia', 'Lung_Opacity']
-FNAME_MAPPER = dict(zip(LST_GROUP, LST_FOLDERS))
-LABEL_MAPPER = dict(zip(LST_GROUP, range(4)))
-
-DIRS = dict(zip(LST_GROUP, [os.path.join(DIR_DATA_LOCAL, folder) for folder in LST_FOLDERS]))
-DIR_IMAGES = dict(zip(LST_GROUP, [os.path.join(dir, 'images') for dir in DIRS.values()]))
-DIR_MASKS = dict(zip(LST_GROUP, [os.path.join(dir, 'masks') for dir in DIRS.values()]))
-
-NUM_ALL_IMG = [3616, 10192, 1345, 6012]
 
 # read and preprocess the images
-
-# images with masks
 baseline_prepro_params = {
     'frac': 4,
     'image_size': (128, 128),

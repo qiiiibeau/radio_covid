@@ -1,31 +1,29 @@
 import streamlit as st
+import os
+from PIL import Image
 
+from streamlit_utils import aligned_markdown
 
-title = "My Awesome DataScientest project."
+title = "Analyse de radiographies pulmonaires Covid-19"
 sidebar_name = "Introduction"
+
+image1_path = '../streamlit_app/assets/grad_cam_wide.jpg'
+image1 = Image.open(image1_path)
 
 
 def run():
-
-    # TODO: choose between one of these GIFs
-    # st.image("https://dst-studio-template.s3.eu-west-3.amazonaws.com/1.gif")
-    st.image("https://dst-studio-template.s3.eu-west-3.amazonaws.com/2.gif")
-    # st.image("https://dst-studio-template.s3.eu-west-3.amazonaws.com/3.gif")
+    st.image(image1)
 
     st.title(title)
 
     st.markdown("---")
 
-    st.markdown(
-        """
-        Here is a bootsrap template for your DataScientest project, built with [Streamlit](https://streamlit.io).
-
-        You can browse streamlit documentation and demos to get some inspiration:
-        - Check out [streamlit.io](https://streamlit.io)
-        - Jump into streamlit [documentation](https://docs.streamlit.io)
-        - Use a neural net to [analyze the Udacity Self-driving Car Image
-          Dataset] (https://github.com/streamlit/demo-self-driving)
-        - Explore a [New York City rideshare dataset]
-          (https://github.com/streamlit/demo-uber-nyc-pickups)
-        """
+    st.title("Problématique")
+    aligned_markdown(
+        "Peut-on construire un modèle détectant efficacement les radiographies pulmonaires de patients positifs au "
+        "Covid-19 ?")
+    aligned_markdown(
+        "Si la classification par deep learning permettait une détection efficace, elle pourrait être un outil de "
+        "support dans les hôpitaux et cliniques en l’absence de test classique notamment lors de pics épidémiques."
     )
+
