@@ -8,7 +8,7 @@ title = "Analyse de radiographies pulmonaires Covid-19"
 sidebar_name = "Introduction"
 
 image1_path = '../streamlit_app/assets/grad_cam_wide.jpg'
-image1 = Image.open(image1_path)
+# image1 = Image.open(image1_path)
 
 
 def run():
