@@ -12,7 +12,7 @@ image1 = Image.open(image1_path)
 
 
 def run():
-    st.image(image1)
+    # st.image(image1)
 
     st.title(title)
 
