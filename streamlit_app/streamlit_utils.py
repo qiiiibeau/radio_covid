@@ -5,15 +5,26 @@ import streamlit as st
 from skimage.io import imread
 from skimage.transform import resize
 
+LST_GROUP = ['covid', 'normal', 'viral', 'opac']
+LST_FOLDERS = ['COVID', 'Normal', 'Viral Pneumonia', 'Lung_Opacity']
+FNAME_MAPPER = dict(zip(LST_GROUP, LST_FOLDERS))
+LABEL_MAPPER = dict(zip(LST_GROUP, range(4)))
 
-sys.path.append('../code')
-# print(sys.path)
-from utils import LST_GROUP, LST_FOLDERS, NUM_ALL_IMG, get_fname, LABEL_MAPPER
+NUM_ALL_IMG = [3616, 10192, 1345, 6012]
+
 
 DIR_DATA_LOCAL = '../data/COVID-19_Radiography_Dataset/'
 DIRS = dict(zip(LST_GROUP, [os.path.join(DIR_DATA_LOCAL, folder) for folder in LST_FOLDERS]))
 DIR_IMAGES = dict(zip(LST_GROUP, [os.path.join(dir, 'images') for dir in DIRS.values()]))
 DIR_MASKS = dict(zip(LST_GROUP, [os.path.join(dir, 'masks') for dir in DIRS.values()]))
+
+
+
+
+# naming / paths
+def get_fname(group, idx):
+    return (f"{FNAME_MAPPER[group]}-{idx}.png")
+
 
 
 def aligned_markdown(text):
